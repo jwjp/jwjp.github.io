@@ -1,5 +1,6 @@
 .DS_Store
 __pycache__/
+/node_modules/
 
 # Local artifacts left by the former Jekyll blog and its tooling.
 /_site/
