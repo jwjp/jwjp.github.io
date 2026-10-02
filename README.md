@@ -1,40 +1,7 @@
-# jwjp.github.io
+# Jiwon Min landing page
 
-Jekyll 4 based multilingual technical blog archive. Korean (`ko`) posts are the source content, and `en`/`ja`/`zh` translations are grouped by `translation_key`.
+This repository serves the static landing page at [jwjp.github.io](https://jwjp.github.io/). English is the default language; the Korean version is at `/ko/`.
 
-- Former custom domain: `blog.jiwon.io` is no longer used.
-- Branch: `gh-pages`
-- Stack: Ruby 3.3, Jekyll 4, Python 3.11
-- Status: low-maintenance archive; GitHub Actions workflows have been removed.
+The page content and visual assets were adapted from the archived `jiwon.io` landing page. No Jekyll build or JavaScript is required. GitHub Pages serves the files directly from the `gh-pages` branch; `.nojekyll` disables Jekyll processing.
 
-## Structure
-
-```text
-_posts/
-  ko/{year}/   source posts
-  en/{year}/   English translations
-  ja/{year}/   Japanese translations
-  zh/{year}/   Simplified Chinese translations
-```
-
-## Local Checks
-
-```bash
-pip install -r scripts/requirements.txt
-pip install -e ./scripts
-python -m unittest discover -s scripts/tests -v
-python scripts/validate_posts.py
-```
-
-For a local Jekyll build:
-
-```bash
-bundle install
-bundle exec jekyll build --baseurl ""
-```
-
-## Notes
-
-- `CNAME` was removed with the custom domain shutdown.
-- Analytics, AdSense, webmaster verification, and IndexNow settings are disabled in `_config.yml`.
-- Automatic GitHub Actions generation, maintenance, deployment, and weekly health jobs were removed.
+To preview locally, serve this directory with a static HTTP server (for example, `python -m http.server 8000`) and open `http://localhost:8000/`.

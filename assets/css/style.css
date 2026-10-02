@@ -1,0 +1,339 @@
+html {
+    background-color: #181c25;
+    color: #f0f1f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.language-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 0;
+    font-size: 0.875rem;
+    color: #c5cad6;
+}
+
+.language-switch a {
+    padding: 0.35rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.language-switch a:hover,
+.language-switch a[aria-current="page"] {
+    background: #30394c;
+    color: #fff;
+}
+
+a:focus-visible {
+    outline: 2px solid #d3ddff;
+    outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+header {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+header .img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header .img-wrapper .blur {
+    max-width: min(100%, 1200px);
+    position: relative;
+    overflow: hidden;
+}
+
+header .img-wrapper .blur:before,
+header .img-wrapper .blur:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background: inherit;
+    z-index: 10;
+}
+
+header .img-wrapper .blur:before {
+    left: 0;
+    background: linear-gradient(90deg, #181c25 0, transparent);
+}
+
+header .img-wrapper .blur:after {
+    right: 0;
+    background: linear-gradient(270deg, #181c25 0, transparent);
+}
+
+header .img-wrapper .blur picture {
+    display: block;
+    width: 100%;
+    max-width: min(100%, 1200px);
+}
+
+header .img-wrapper .blur img {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: transparent;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: #f0f1f5;
+    color: #181c25;
+    border-radius: 0 0 4px 4px;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+main {
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 80px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+main hr {
+    margin: 50px 0;
+    border: 0;
+    border-top: 1px solid #444f69;
+}
+
+main section#intro h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 40px 0 8px;
+}
+
+main section#intro .role {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #888ea8;
+    margin-bottom: 16px;
+}
+
+main section#contents h2,
+main section#careers h2 {
+    font-size: 30px;
+    line-height: 1.8;
+    margin: 50px 0 40px;
+}
+
+main section#careers h2 {
+    margin-bottom: 24px;
+}
+
+main section#contents p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom:16px;
+}
+
+main section#careers table {
+    width: 100%;
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+main section#careers p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+main section#careers table tr th {
+    font-weight: inherit;
+    text-align: left;
+}
+
+main section#careers table tr td:nth-child(even) {
+    color: hsl(222 21% 76% / 1);
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    white-space: nowrap;
+    text-align: right;
+}
+
+footer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    min-height: 60px;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #aeb7cc;
+}
+
+.ad-slot {
+    display: none;
+    max-width: 700px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.ad-slot.is-filled {
+    display: block;
+    margin: 40px auto;
+}
+
+.ad-slot--in-article.is-filled {
+    margin: 32px 0;
+}
+
+.legal .back-link {
+    margin: 40px 0 24px;
+    font-size: 14px;
+}
+
+.legal h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.legal-meta {
+    font-size: 14px;
+    color: #888ea8;
+    margin-bottom: 32px;
+}
+
+.legal h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 32px 0 12px;
+}
+
+.legal p,
+.legal li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.legal code {
+    font-size: 0.9em;
+    color: #c5cad6;
+}
+
+.error-page {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.error-page .error-code {
+    font-size: 72px;
+    font-weight: 600;
+    color: #444f69;
+    margin-bottom: 16px;
+}
+
+.error-page h1 {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.error-page p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 540px) {
+    main section#intro h1,
+    .legal h1 {
+        font-size: 32px;
+    }
+
+    main section#contents h2,
+    main section#careers h2 {
+        font-size: 26px;
+    }
+
+    main section#careers table tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    main section#careers table tr th,
+    main section#careers table tr td:nth-child(even) {
+        display: block;
+        text-align: left;
+        padding: 0.25rem 0;
+    }
+}

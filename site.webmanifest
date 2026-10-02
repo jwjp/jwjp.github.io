@@ -1,6 +1,6 @@
 {
-  "name": "Jiwon Min · Developer Blog",
-  "short_name": "Jiwon Min",
+  "name": "Jiwon",
+  "short_name": "Jiwon",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#181c25",
+  "background_color": "#181c25",
   "display": "standalone"
 }

@@ -1,13 +1,43 @@
----
-layout: default
-title: "404: Page not found"
-permalink: 404.html
-robots: noindex, nofollow
-seo_description: 요청하신 페이지를 찾을 수 없습니다.
-image: /assets/og-default.webp
----
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found · Jiwon Min</title>
+    <meta name="description" content="This page could not be found. Return to Jiwon Min's website.">
+    <meta name="robots" content="noindex, nofollow">
 
-<div class="page" id="page-404">
-    <h1 class="page-title" data-404-title>404: Page not found</h1>
-    <p class="lead"><span data-404-message>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</span> <a href="/" data-404-home>Head back home</a></p>
-</div>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="language-switch" aria-label="Language">
+    <a href="/" lang="en">English</a>
+    <a href="/ko/" lang="ko">한국어</a>
+</nav>
+
+<main id="main" class="error-page">
+    <p class="error-code">404</p>
+    <h1>Page not found</h1>
+    <p>The page may have moved, or the address may be incorrect.</p>
+    <p lang="ko">페이지를 찾을 수 없습니다. 주소를 확인하거나 홈으로 돌아가 주세요.</p>
+    <p><a href="/">Go to English home</a> · <a href="/ko/" lang="ko">한국어 홈으로 가기</a></p>
+</main>
+
+<footer>
+    <nav aria-label="Site links">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/privacy.html">Privacy</a></li>
+            <li><a href="https://github.com/jwjp" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://x.com/jiwonio" target="_blank" rel="noopener noreferrer">X</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+</html>
