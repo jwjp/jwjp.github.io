@@ -218,22 +218,37 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .connect {
   position: relative;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, .88fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 62px);
   overflow: hidden;
   margin-block: clamp(75px, 10vw, 130px);
-  padding: clamp(38px, 7vw, 88px);
+  padding: clamp(38px, 6vw, 76px);
   border-radius: 8px;
-  background: var(--dark);
+  background: radial-gradient(circle at 78% 50%, rgba(76, 139, 108, .3), transparent 43%), radial-gradient(circle at 90% 86%, rgba(238, 102, 68, .16), transparent 35%), var(--dark);
   color: #fff;
 }
-.connect::after { content: ""; position: absolute; right: -130px; top: -210px; width: 450px; height: 450px; border: 1px solid rgba(255,255,255,.19); border-radius: 50%; pointer-events: none; }
+.connect-content { position: relative; z-index: 2; }
 .connect .section-number { color: #f5a48d; }
 .connect h2 { max-width: 650px; margin-top: 18px; font-size: clamp(42px, 5vw, 68px); line-height: 1.08; }
 .connect p { max-width: 570px; margin-top: 22px; color: #c9d9cf; font-size: 17px; line-height: 1.7; }
-.connect .button { position: relative; z-index: 1; flex: none; }
+.connect .button { margin-top: 31px; }
+.connect-visual { position: relative; isolation: isolate; justify-self: end; width: min(100%, 420px); aspect-ratio: 1; }
+.connect-visual::before, .connect-visual::after {
+  content: "";
+  position: absolute;
+  inset: 7%;
+  border: 1px solid rgba(207, 237, 216, .31);
+  border-radius: 50%;
+  box-shadow: 0 0 45px rgba(102, 197, 145, .08);
+  transition: opacity .45s ease;
+}
+.connect-visual::after { inset: 24%; border-color: rgba(247, 142, 107, .4); transform: rotateX(62deg) rotate(28deg); }
+.connect-visual-core { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; border-radius: 50%; background: #ff9674; box-shadow: 0 0 35px 12px rgba(243, 106, 69, .25); transform: translate(-50%, -50%); transition: opacity .45s ease; }
+.connect-visual-canvas { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity .45s ease; }
+.connect-visual.is-animated::before, .connect-visual.is-animated::after, .connect-visual.is-animated .connect-visual-core { opacity: 0; }
+.connect-visual.is-animated .connect-visual-canvas { opacity: 1; }
 
 /* Privacy and missing pages */
 .page-main { width: min(100% - 64px, 900px); margin-inline: auto; padding-block: clamp(80px, 10vw, 130px); }
@@ -273,6 +288,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .about { gap: 6%; }
   .value-card { padding-right: 20px; }
   .value-card + .value-card { padding-left: 20px; }
+  .connect { grid-template-columns: 1fr; }
+  .connect-visual { justify-self: center; width: min(100%, 360px); margin-top: -12px; }
 }
 @media (max-width: 680px) {
   .shell, .page-main { width: min(100% - 40px, 1200px); }
@@ -298,8 +315,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .value-card, .value-card + .value-card { min-height: 0; padding: 28px 0 31px; border-left: 0; }
   .value-card + .value-card { border-top: 1px solid #bfcfc2; }
   .value-card h3 { margin-top: 20px; }
-  .connect { display: block; margin-block: 70px; padding: 43px 27px; }
-  .connect .button { margin-top: 30px; }
+  .connect { grid-template-columns: 1fr; margin-block: 70px; padding: 43px 27px 25px; }
+  .connect-visual { justify-self: center; width: min(100%, 320px); margin-top: 16px; }
   .page-main { padding-block: 80px 95px; }
   .page-lede { font-size: 18px; }
   .policy-list { margin-top: 55px; }
@@ -310,5 +327,5 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button, .site-nav a, .language-switch a { transition: none; }
-  .hero-card::before, .hero-card::after, .hero-card-canvas { transition: none; }
+  .hero-card::before, .hero-card::after, .hero-card-canvas, .connect-visual::before, .connect-visual::after, .connect-visual-core, .connect-visual-canvas { transition: none; }
 }

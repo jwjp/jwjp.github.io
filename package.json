@@ -2,7 +2,7 @@
   "name": "jiwon-landing",
   "private": true,
   "scripts": {
-    "build:visual": "esbuild assets/js/hero-wireframe.js --bundle --minify --format=esm --target=es2020 --legal-comments=linked --outfile=assets/js/hero-wireframe.bundle.js"
+    "build:visual": "esbuild assets/js/visuals.js --bundle --minify --format=esm --target=es2020 --legal-comments=linked --outfile=assets/js/visuals.bundle.js"
   },
   "dependencies": {
     "three": "0.186.1"
